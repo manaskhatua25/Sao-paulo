@@ -1,0 +1,2 @@
+num_pipeline = Pipeline([('std_scaler', StandardScaler())])
+full_pipeline = ColumnTransformer([("num", num_pipeline, numerical_data)], remainder='passthrough')
