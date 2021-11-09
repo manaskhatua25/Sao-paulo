@@ -1,0 +1,2 @@
+df = load_data()
+df.head()
