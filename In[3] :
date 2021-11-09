@@ -8,5 +8,4 @@ def load_data(path:str=DATA_PATH, sep:str=";"):
         return False
 
 
-df = load_data()
-df.head()
+
