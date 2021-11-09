@@ -1,0 +1,2 @@
+attributes = ["Slowness in traffic (%)", "Hour (Coded)"]
+scatter_matrix(df[attributes], figsize=(12, 8))
