@@ -1,0 +1,7 @@
+data = {
+    "Model":["Linear Reg", "Decision Tree", "SVR", "Random Forest"],
+    "Mean Score": [lin_rmse_scores.mean(), tree_rmse_scores.mean(), svr_rmse_scores.mean(), forest_rmse_scores.mean()],
+    "Standard Deviation": [lin_rmse_scores.std(), tree_rmse_scores.std(), svr_rmse_scores.std(), forest_rmse_scores.std()]
+}
+scores_df = pd.DataFrame(data)
+scores_df
