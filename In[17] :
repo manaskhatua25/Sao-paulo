@@ -1,0 +1,1 @@
+df.groupby('Day')['Slowness in traffic (%)'].mean()
