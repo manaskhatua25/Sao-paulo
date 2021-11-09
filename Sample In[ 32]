@@ -1,0 +1,6 @@
+# Here are a few examples...
+predictions = final_predictions[:10]
+actual_results = y_test[:10]
+
+for p, a in zip(predictions, actual_results):
+    print("Predicted: {:.2f} - Expected: {}".format(p, a))
