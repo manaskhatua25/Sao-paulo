@@ -1,0 +1,2 @@
+best_grid_model = grid_search.best_estimator_
+print("Best model paramateres:", grid_search.best_params_)
