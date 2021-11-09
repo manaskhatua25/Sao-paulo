@@ -1,0 +1,23 @@
+def slowness_over_time(df, coded_hours=False):
+    fig = plt.figure(figsize=(20, 12))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    colors = {'Monday': 'r', 'Tuesday': 'b', 'Wednesday': 'g', 'Thursday': 'yellow', 'Friday':'black'}
+    transform_days(df)
+    for e in df['Day'].unique():
+        subset = df[df['Day'] == e]
+        ax.plot(subset['Hour (Coded)'], subset['Slowness in traffic (%)'],color=colors[e])
+
+    ax.set_title('Slowness in traffic VS. Hour of the day', fontsize=25, pad=15)
+    ax.set_xlabel('Hour of the day', fontsize=15)
+    ax.set_ylabel('Slowness in traffic (%)', fontsize=15)
+    
+    if coded_hours is False:
+        ax.set_xticks(range(1, 28))
+        ax.set_xticklabels(map(code_hour, subset['Hour (Coded)'].unique()))
+
+    ax.legend(colors, fontsize=20)
+
+    plt.show()
+slowness_over_time(df)
+transform_days(df, to_numerical=True)
