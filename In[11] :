@@ -1,0 +1,23 @@
+# Create code to hour dict
+def set_hours_dict(df, hours:dict =HOURS)-> dict:
+    hours_arr = []
+
+    for hour, minute in hours.items():
+      s1 = str(hour) + ':' + '00'
+      s2 = str(hour) + ':' + str(minute)
+      if hour != 20:
+        hours_arr.append(s1)
+        hours_arr.append(s2)
+      else:
+        hours_arr.append(s1)
+
+    code_to_hour = {}
+    for code, hour in zip(df['Hour (Coded)'], hours_arr):
+      code_to_hour[code] = hour
+
+    return code_to_hour
+
+code_to_hour = set_hours_dict(df)
+
+def code_hour(code):
+  return code_to_hour[code]
