@@ -1,0 +1,2 @@
+corr_matrix = df.corr()
+corr_matrix['Slowness in traffic (%)'].sort_values(ascending=False)
