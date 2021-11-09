@@ -1,0 +1,4 @@
+transform_days(df, to_numerical=True)
+plt.figure(figsize=(12, 8))
+sns.heatmap(df.corr(), cmap='Blues', annot=True)
+plt.show()
