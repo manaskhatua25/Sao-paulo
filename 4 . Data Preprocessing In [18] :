@@ -1,0 +1,7 @@
+train_set, test_set = train_test_split(df, test_size=0.2, random_state=42, stratify=df["Hour (Coded)"])
+
+# Verifying stratified distribution
+print("Train set class proportions:\n")
+print(train_set["Hour (Coded)"].value_counts() / len(train_set))
+print("\nFull set:")
+print(df["Hour (Coded)"].value_counts() / len(df))
