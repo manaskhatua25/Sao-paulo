@@ -1,0 +1,12 @@
+def load_data(path:str=DATA_PATH, sep:str=";"):
+    try:
+        df = pd.read_csv(path, sep=sep)
+        print("Data loaded with success")
+        return df
+    except FileNotFoundError:
+        print("Check your data directory! Nothing there yet...")
+        return False
+
+
+df = load_data()
+df.head()
