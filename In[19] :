@@ -1,0 +1,2 @@
+X_train = train_set.drop("Slowness in traffic (%)", axis=1)
+y_train = train_set["Slowness in traffic (%)"].copy()
