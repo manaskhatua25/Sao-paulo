@@ -1,0 +1,3 @@
+def transform_target(df, target_var=TARGET_VAR, to=float):
+    df[target_var] = df[target_var].str.replace(',', '.').astype(to)
+transform_target(df)
