@@ -1,0 +1,29 @@
+# New attribute
+def transform_days(df, create_column=False, to_numerical=False):
+    #check is day column exists if not create
+    #if numerical transformation, go from day to number
+    #else go from number to day names
+    if create_column:
+        df['Day'] = '0'
+
+    position=-1
+    if to_numerical is False:
+        for idx in df.index:
+            if idx <= MONDAY:
+                df.iloc[idx, position] = 'Monday'
+            elif idx <= TUESDAY:
+                df.iloc[idx, position] = 'Tuesday'
+            elif idx <= WEDNESDAY:
+                df.iloc[idx, position] = 'Wednesday'
+            elif idx <= THURSDAY:
+                df.iloc[idx, position] = 'Thursday'
+            elif idx <= FRIDAY:
+                df.iloc[idx, position] = 'Friday'
+    else:
+        df_values = df["Day"].unique()
+        for key, value in DAYS_TO_CODE.items():
+            assert key in df_values, "First transform your data into weekday by setting to_numerical=False, then apply the numerical transformation"
+            df.loc[(df.Day == key), 'Day'] = value
+        df['Day'] = df['Day'].astype(int)
+        
+transform_days(df, create_column=True
