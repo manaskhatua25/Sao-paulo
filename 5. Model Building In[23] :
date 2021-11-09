@@ -1,0 +1,3 @@
+tree_reg = DecisionTreeRegressor(random_state=42)
+scores = cross_val_score(tree_reg, X_train_prepared, y_train, scoring="neg_mean_squared_error", cv=10)
+tree_rmse_scores = np.sqrt(-scores)
