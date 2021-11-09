@@ -1,0 +1,2 @@
+print(f"Dataframe shape: {df.shape}\n")
+df.info()
