@@ -1,0 +1,3 @@
+x_num_cols = X_train.nunique()[X_train.nunique() > 2].keys()
+x_num_cols = x_num_cols.drop('Day')
+numerical_data = list(x_num_cols)
